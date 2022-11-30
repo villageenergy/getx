@@ -10,12 +10,13 @@ class GetHttpException implements Exception {
 }
 
 class GraphQLError {
-  GraphQLError({this.code, this.message});
+  GraphQLError({this.code, this.message,this.extensions});
+  final Map<String, dynamic>? extensions;
   final String? message;
   final String? code;
 
   @override
-  String toString() => 'GETCONNECT ERROR:\n\tcode:$code\n\tmessage:$message';
+  String toString() => 'GETCONNECT ERROR:\n\tcode:$code\n\tmessage:$message\n\textensions:$extensions';
 }
 
 class UnauthorizedException implements Exception {
